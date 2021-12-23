@@ -13,9 +13,9 @@ public class WeaponSlot {
             this.pickupPicked = pickupPicked;
         }
     }
-    public static void main(int iModel, int iPrice, int iWorld, int iRespawnTime, boolean iPickupPicked) {
+    public static void main(int iModel, int iPrice, int iWorld, int iRespawnTime, boolean bPickupPicked) {
         WeaponSlot custom = new WeaponSlot();
-        custom.pickupMechanics(iModel, iPrice, iWorld, iRespawnTime, iPickupPicked);
+        custom.pickupMechanics(iModel, iPrice, iWorld, iRespawnTime, bPickupPicked);
     }
     public void pickupMechanics(int model, int price, int world, int respawnTime, boolean pickupPicked) {
         list.add(new Data(model, price, world, respawnTime, pickupPicked));
