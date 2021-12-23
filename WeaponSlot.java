@@ -27,3 +27,14 @@ public class WeaponSlot {
     }
 }
 
+/*
+        WeaponSlot.main( 0,  2,  0,  0, false);
+        WeaponSlot.main( 1,  3,  0,  0, false);
+        WeaponSlot.main( 2,  0,  0,  0, false);
+        WeaponSlot.main( 3,  0,  0,  0, false);        
+        WeaponSlot.main( 4,  0,  0,  0, false);
+        WeaponSlot.main( 5,  0,  0,  0, false);
+        WeaponSlot.main( 6,  0,  0,  0, false);
+        WeaponSlot.main( 7,  0,  0,  0, true);
+        WeaponSlot.getIndex(1);
+*/
