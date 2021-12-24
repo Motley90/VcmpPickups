@@ -12,7 +12,7 @@ public class WeaponSlot {
     public static ArrayList<Data> list = new ArrayList<Data>();
     
     //Nested Class
-    public static class Data {
+    class Data {
       private int model, price, world, respawnTime;
       private float x, y, z;
       private boolean pickupPicked = false;
