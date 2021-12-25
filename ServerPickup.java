@@ -6,7 +6,7 @@ import com.github.newk5.vcmp.maven.controllers.MainController;
 
 
 
-public class WeaponSlot {
+public class ServerPickup {
     public static HashMap<Integer, Data> list = new HashMap<>();
     
     //Nested Class
@@ -28,7 +28,7 @@ public class WeaponSlot {
     
     // Pickup creation
     public static void main(int iModel, int iPrice, int iWorld, int iRespawnTime, boolean iPickupPicked, float fX, float fY, float fZ) {
-        WeaponSlot custom = new WeaponSlot();
+        ServerPickup custom = new ServerPickup();
         custom.pickupMechanics(iModel, iPrice, iWorld, iRespawnTime, iPickupPicked, fX, fY, fZ);
     }
     public void pickupMechanics(int model, int price, int world, int respawnTime, boolean pickupPicked, float x, float y, float z) {
@@ -40,7 +40,7 @@ public class WeaponSlot {
     // Pickup creation
 }
 
-/*         WeaponSlot.main( 366, 2,  0,  0, false, 0.0f, 0.0f, 0.0f);
+/*         ServerPickup.main( 366, 2,  0,  0, false, 0.0f, 0.0f, 0.0f);
 */
 
 
