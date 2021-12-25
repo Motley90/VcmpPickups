@@ -2,6 +2,8 @@
 package com.github.newk5.vcmp.maven.weapons;
 import java.util.ArrayList;
 import com.maxorator.vcmp.java.plugin.integration.player.Player;
+import com.maxorator.vcmp.java.plugin.integration.placeable.Pickup;
+
 import java.util.*;
 
 /**
@@ -23,10 +25,8 @@ public class PlayerWeapon {
         this.playerName = name;
       }
       // I want this to be a direct call
-      public void addWeapon(String player, int weaponModel, int slot, int amount ) {
-          //player.setWeapon(model[slot] = weaponModel , ammo[slot] = player.getAmmoAtSlot(slot) + amount );
-            playerModel[slot] = weaponModel; 
-            playerAmmo[slot] += amount;
+      public void addWeapon(Player player, int playerID, int weaponModel, int slot, int amount ) {
+          player.setWeapon(playerSlot.get(playerID).playerModel[slot] = weaponModel , playerSlot.get(playerID).playerAmmo[slot] = player.getAmmoAtSlot(slot) + amount );
       }
     // player weapon slot initiation
     }
