@@ -20,15 +20,22 @@ public class PlayerWeapon {
       custom.addPlayerWeaponSlots(name, playerID);
     }
     //---------------------------------
-    public static void addToWeapon(Player player, int playerID, int weaponModel, int slot, int amount ) {
+    public static void addWeapon(Player player, int playerID, int weaponModel, int slot, int amount ) {
       player.setWeapon(playerSlot.get(playerID).playerModel[slot] = weaponModel , playerSlot.get(playerID).playerAmmo[slot] = player.getAmmoAtSlot(slot) + amount );
     } 
-    public static void addWeapon(int playerID, int slot, int model) {
-     playerSlot.get(playerID).playerModel[slot] = model;
+    public static void addToWeapon(Player player, int playerID, int slot, int model) {
+      // Mostly for changing the model manually, prefered method
+      playerSlot.get(playerID).playerModel[slot] = model;
+      playerSlot.get(playerID).playerAmmo[slot] = player.getAmmoAtSlot(slot);
+      player.setWeapon(playerSlot.get(playerID).playerModel[slot], playerSlot.get(playerID).playerAmmo[slot]);
     }
-    public static void addAmmo(int playerID, int slot, int ammo) {
-     playerSlot.get(playerID).playerAmmo[slot] = ammo;
-    }
+    public static void addToAmmo(Player player, int playerID, int slot, int ammo) {
+      // Mostly for updating the ammo manually, prefered method
+     playerSlot.get(playerID).playerAmmo[slot] = player.getAmmoAtSlot(slot) + ammo;
+     player.setWeapon(playerSlot.get(playerID).playerModel[slot], playerSlot.get(playerID).playerAmmo[slot]);
+
+      // Test if getAmmoAtSlot is writable or only readable. If writable it can get updated here
+    } 
     //---------------------------------
 }
 
