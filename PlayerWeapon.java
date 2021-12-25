@@ -2,7 +2,7 @@
 package com.github.newk5.vcmp.maven.weapons;
 import java.util.ArrayList;
 import com.maxorator.vcmp.java.plugin.integration.player.Player;
-
+import java.util.*;
 
 /**
  *
@@ -11,7 +11,9 @@ import com.maxorator.vcmp.java.plugin.integration.player.Player;
 
 // This class is player related
 public class PlayerWeapon {
-    public static ArrayList<Data> playerSlot = new ArrayList<Data>();
+    //public static ArrayList<Data> playerSlot = new ArrayList<Data>();
+    public static HashMap<Integer, Data> playerSlot = new HashMap<>();
+    
 
     //Nested Class
     class Data {
@@ -22,48 +24,31 @@ public class PlayerWeapon {
       }
       // I want this to be a direct call
       public void addWeapon(String player, int weaponModel, int slot, int amount ) {
-          player.setWeapon(model[slot] = weaponModel , ammo[slot] = player.getAmmoAtSlot(slot) + amount );
+          //player.setWeapon(model[slot] = weaponModel , ammo[slot] = player.getAmmoAtSlot(slot) + amount );
+            playerModel[slot] = weaponModel; 
+            playerAmmo[slot] += amount;
       }
     // player weapon slot initiation
     }
 
     // player weapon slot initiation
       
-    public void addPlayerWeaponSlots(String name) {
-        playerSlot.add(new Data(name));
+    public void addPlayerWeaponSlots(String name, int playerID) {
+        playerSlot.put(playerID, new Data(name));
     }
-    public static void initiatPlayerWeaponSlots(String name) {
+    public static void initiatPlayerWeaponSlots(String name, int playerID) {
         PlayerWeapon custom = new PlayerWeapon();
-        custom.addPlayerWeaponSlots(name);
+        custom.addPlayerWeaponSlots(name, playerID);
     }
 
       // Random lazy test
-      public static void getWsIndex(String playerName, int weapon) {
+      public static void getWsIndex(int playerID) {
         try {
-          for (int i = 0; i < playerSlot.size(); i++) {
-            if (playerSlot.get(i).playerName == "Motley") { 
-             playerSlot.get(i).playerModel[weapon] = 266;
-             playerSlot.get(i).playerAmmo[weapon] = 266;
-              System.out.print( playerSlot.get(i).playerModel[weapon] + " " + playerSlot.get(i).playerAmmo[weapon] );
-              System.out.println( playerSlot.get(i).playerName + " is at slot " + i);
-            }
-            if (playerSlot.get(i).playerName == "Pussy") { 
-             playerSlot.get(i).playerModel[weapon] = 100;
-             playerSlot.get(i).playerAmmo[weapon] = 66;
-              System.out.print( playerSlot.get(i).playerModel[weapon] + " " + playerSlot.get(i).playerAmmo[weapon] );
-              System.out.println( playerSlot.get(i).playerName + " is at slot " + i);
-            }
-            if (playerSlot.get(i).playerName == "Motley") { 
-              System.out.print( playerSlot.get(i).playerModel[weapon] + " " + playerSlot.get(i).playerAmmo[weapon] );
-              System.out.println( playerSlot.get(i).playerName + " is at slot " + i);
-            }
-            if (playerSlot.get(i).playerName == "Pussy") { 
-              System.out.print( playerSlot.get(i).playerModel[weapon] + " " + playerSlot.get(i).playerAmmo[weapon] );
-              System.out.println( playerSlot.get(i).playerName + " is at slot " + i);
-            }
-          }
-          
-        } 
+            //System.out.println(playerSlot.keySet());
+            System.out.println(playerSlot.get(playerID).playerName);
+
+
+            }    
         catch (Exception e) {
           System.out.println("The index does not exist");
         }
@@ -73,8 +58,8 @@ public class PlayerWeapon {
 
 
 /*        
-       PlayerWeapon.initiatPlayerWeaponSlots("Motley");
-        PlayerWeapon.initiatPlayerWeaponSlots("Pussy");
-        PlayerWeapon.getWsIndex("Motley", 8);
-        PlayerWeapon.getWsIndex("Pussy", 8);
+       PlayerWeapon.initiatPlayerWeaponSlots("Motley", 0);
+        PlayerWeapon.initiatPlayerWeaponSlots("Pussy", 1);
+        PlayerWeapon.getWsIndex(0);
+        PlayerWeapon.getWsIndex(1);
 */
