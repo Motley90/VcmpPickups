@@ -20,7 +20,7 @@ public class PlayerWeapon {
       custom.addPlayerWeaponSlots(name, playerID);
     }
     //---------------------------------
-    public static void addWeapon(Player player, int playerID, int weaponModel, int slot, int amount ) {
+    public static void addToWeapon(Player player, int playerID, int weaponModel, int slot, int amount ) {
       player.setWeapon(playerSlot.get(playerID).playerModel[slot] = weaponModel , playerSlot.get(playerID).playerAmmo[slot] = player.getAmmoAtSlot(slot) + amount );
     } 
     public static void addWeapon(int playerID, int slot, int model) {
