@@ -5,6 +5,7 @@ import java.util.*;
 
 public class PlayerWeapon {
     public static HashMap<Integer, Data> playerSlot = new HashMap<>();
+    // Nested class
     class Data {
       private int playerModel[] = {0, 1, 2, 3, 4, 5, 6, 7, 8}, playerAmmo[] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
       private String playerName;
